@@ -6,8 +6,6 @@ sidebar_label: Dashboard
 
 This module allows visualizing the trend of data in the system. The dashboard includes graphs and charts for visualy displaying data. major functions in the dashboard are adding dashboards, viewing, adding dashboard elements, updating dashboards and deleting dashboards.
 
-###  Adding dashboards
-
 ### Dashboard
 
 `Method:` GET
@@ -48,16 +46,6 @@ This module allows visualizing the trend of data in the system. The dashboard in
 }
 }
 ```
-|Element|Description|Type|Notes|
-|----|----|----|-----|
-
-###  Viewing dashboards
-
-###  Adding dashboard
-
-###  Updating dashboards
-
-###  Deleting dashboards
 
 
 
