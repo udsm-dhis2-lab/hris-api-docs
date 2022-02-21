@@ -57,8 +57,3 @@ Data exportation involves a series of actions such as selecting an organization 
 }
 }
 ```
-|Element|Description|Type|Notes|
-|----|----|----|-----|
-
-#### Choosing a data import file
-#### Importing data
