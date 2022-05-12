@@ -1,6 +1,6 @@
 ---
+title: "Dashboard Module"
 id: dashboard
-title: Dashboard Module
 sidebar_label: Dashboard
 ---
 
