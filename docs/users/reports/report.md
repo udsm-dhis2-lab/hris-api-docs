@@ -4,7 +4,7 @@ title: Report Module
 sidebar_labe: Report
 ---
 
- This module analyses healthworker data for user to understand the trend of health workers in the country so as to take necessary actions as required. 
+ This module analyses healthworker data for user to understand the trend of health workers in the country so as to take necessary decisions and actions for improvements as required. 
 
 ### Accessing Reports App ###
 To access report application do the following:

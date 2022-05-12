@@ -55,9 +55,9 @@ Functions in HRHIS are groped into different modules/apps for easier organizatio
 
 ### **Accessing HRHIS** ###
 
-HRHIS system is available via the [Web](https://hrhis.moh.go.tz/). Type `hrhis.moh.go.tz` in the address bar/search bar of a web browser(an application used to access the internet such as Internet Explorer, Mozilla Firefox, Google Chrome, Opera, etc.) to access HRHIS login screen provided that you are connected to the Internet.
+HRHIS system is available via the [Web](https://hrhis.moh.go.tz/). Type `hrhis.moh.go.tz` in the address bar/search bar of a web browser(such as Internet Explorer, Mozilla Firefox, Google Chrome, Opera, etc.) to access HRHIS login screen provided that you are connected to the Internet. 
 
-It is recommended to use Mozilla Firefox or Google Chrome. Internet Explorer is not advised to be used for accessing HRHIS, but if it is found necessary to use then, the latest version of the browser can be used). The HRHIS login page will appear as seen below,
+It is recommended to use Mozilla Firefox or Google Chrome. Internet Explorer is not advised to be used for accessing HRHIS, but if it is found necessary to use then, the latest version of the browser can be used). The HRHIS login page appears as seen below,
 
 ![img alt](/images/login.png)
 

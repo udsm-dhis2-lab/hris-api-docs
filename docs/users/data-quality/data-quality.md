@@ -48,5 +48,15 @@ As an example, here Public employees from has been selected.
  
 
 ## Record Consistency Checker ##
-The records consistency checker 
 
+The records consistency checker assists in checking the consistency or meaningfulness of records in the system. Records with incosistent information are displayed in the records consistency checker so as to alert authorized users to take necessary steps so as to ensure consistency of health worker information. To access the record consistency checker follow the steps indicated below.
+
+![img alt](/images/consistencyChecker.png)
+
+1. Select "Data quality" from the menu on the left hand side
+2. Select "Consistency checker" from the options under data quality module.
+3. Click on the button labelled "select the consistency check criterias" to specify the criterias to be used for checking consistency. An interface appears as indicated below
+
+![img alt](/images/consistencyCheckCriterias.png)
+
+Follow the steps indicated in the interface above to view record incosistency.
