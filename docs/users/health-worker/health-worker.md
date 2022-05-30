@@ -31,11 +31,6 @@ The proifle will open up with more health worker details in the structure indica
 
 ![img alt](/images/HealthWorkerProfile.png)
 
-### Viewing unemployed health workers
- To view unemployed health workers, select "Unemployed" section under employment module. This section provides list of prospective health workers who have been registered in professional councils but have not been employed in public nor private health facilities in the health sector. The list can be customized with various filters as indicated below.
-
- ![img alt](/images/UnemployedList.png)
-
  To open an unemployed health worker's profile for viewing more details, click on the respective health worker's record from the list of unemployed health workers.
 
 ### Viewing employment reports
