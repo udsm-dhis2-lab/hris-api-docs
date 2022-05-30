@@ -10,7 +10,7 @@ This module serves the purpose of management of all metadata for the HRHIS syste
 2. Forms management
 3. Reports management
 4. Organization units management
-5. Training managemen
+5. Training management
 
 ### Fields Management ###
 Fields are the building blocks of forms in the HRHIS system. Field management allows authorized users to add and configure fields so as to be used in all forms in the system. Select 'Maintenance' from the list of applications, a new page will open up as indicated below.
