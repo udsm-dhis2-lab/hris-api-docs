@@ -2,12 +2,12 @@ module.exports = {
   title: "HRHIS",
   tagline:
     "Documentation for collection, collation, storage of Human resource for health Information software.",
-  url: "https://udsm-dhis2-project.github.io",
+  url: "https://udsm-dhis2-lab.github.io",
   baseUrl: "/hris-api-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "images/favicon.png",
-  organizationName: "udsm-dhis2-project", // Usually your GitHub org/user name.
+  organizationName: "udsm-dhis2-lab", // Usually your GitHub org/user name.
   projectName: "hris-api-docs", // Usually your repo name.
   themeConfig: {
     navbar: {
@@ -30,7 +30,7 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://github.com/udsm-dhis2-project/hris-api-docs",
+          href: "https://github.com/udsm-dhis2-lab/hris-api-docs",
           label: "GitHub",
           position: "right",
         },
@@ -60,7 +60,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.json"),
           editUrl:
-            "https://github.com/udsm-dhis2-project/hris-api-docs/blob/main/",
+            "https://github.com/udsm-dhis2-lab/hris-api-docs/blob/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
