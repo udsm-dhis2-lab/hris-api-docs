@@ -4,9 +4,126 @@ title: HRHIS API Introduction
 sidebar_label: Introduction to HRHIS APIs
 ---
 
-## Introduction to HRHIS APIs
+# Introduction to HRHIS APIs
 
 The HRHIS API is organized around. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+
+## Setting Up HRHIS
+
+HRHIS uses docker from development to deployment.
+
+> When setting up HRHIS for both development and production, we will setup mainly 3 services used by HRHIS.
+
+- PostgreSQL as our data persistance layer.
+- Nginx as the reverse proxy and webserver.
+- Redis as an in memory session storage database.
+- NodeJs as our underlying API application runtime environment.
+
+> HRHIS uses environmental variables to manage some runtime resources that can not be directly built in production port and at the bare minimum, the following environment variables are needed
+
+- SERVER_PORT. The port in which your NestJs application listens on.
+- DB_CONNECTION. TypeORM database connection name.
+- DB_HOST. PostgreSQL database host.
+- DB_PORT. PostgreSQL database port.
+- DB_USERNAME. PostgreSQL database username.
+- POSTGRES_PASSWORD. PostgreSQL database password.
+- POSTGRES_USER. PostgreSQL database name.
+
+### Setting up docker environment for development
+
+`Steps`
+
+1. Install [Docker](https://www.docker.com/)
+2. Clone the [repo](git@github.com:udsm-dhis2-lab/hris-core.git)
+3. cd into your clone repository
+4. Create `Dockerfile` file
+
+   ```javascript
+   FROM node:14.16.1-alpine3.12
+   RUN apk add --no-cache tzdata
+   RUN apk add --no-cache --virtual .gyp python3 make gcc g++
+   ENV TZ Africa/Dar_es_Salaam
+   RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+   RUN mkdir /home/app
+   WORKDIR /home/app
+   COPY ["package.json", "package-lock.json","nodemon.json", "nodemon-debug.json","config.example.json" ,"tsconfig.json", "tsconfig.build.json","./"]
+   RUN npm install && apk del .gyp
+   COPY ["src","./src"]
+   ```
+
+5. Create `docker-compose.yml` file
+
+   ```javascript
+   version: '3.2'
+
+   services:
+     redis:
+       image: redis
+       restart: always
+       healthcheck:
+         test: 'exit 0'
+       networks:
+       - hrhis-network
+
+     postgres:
+       image: postgres:14-alpine3.15
+       command: postgres -c 'max_connections=1000'
+       shm_size: 10g
+       healthcheck:
+          test: [ "CMD", "pg_isready", "-q", "-d", "${POSTGRES_DB}", "-U", "${POSTGRES_USER}" ]
+          timeout: 45s
+          interval: 10s
+          retries: 10
+       env_file: .env
+       restart: always
+       volumes:
+         - postdb-data:/var/lib/postgresql/data
+       networks:
+       - hrhis-network
+
+     nginx:
+       image: nginx:1.17.9-alpine
+       ports:
+         - <YOUR ENV SERVER PORT>:8080
+       healthcheck:
+         test: ['CMD', 'curl', '-f', 'http://localhost:8080/']
+         timeout: 20s
+       restart: always
+       env_file: .env
+       volumes:
+         - ./nginx.conf:/etc/nginx/nginx.conf
+     api:
+       image: hris/api
+       build: .
+       restart: always
+       env_file: .env
+       healthcheck:
+         test: ['CMD', 'curl', '-f', 'http://localhost:<YOUR ENV SERVER PORT>/']
+         timeout: 20s
+       depends_on:
+         - postgres
+       command: npm run start:dev
+       networks:
+       - hrhis-network
+       volumes:
+         - ./src:/home/app/src
+         - ./files:/home/app/files
+   volumes:
+     postdb-data:
+       driver: local
+   networks:
+     hrhis-network:
+
+   ```
+
+6. Change the upstream port in `nginx.conf` file to match `YOUR ENV SERVER PORT`
+
+7. Run `docker-compose up`
+8. The following screen should appear
+
+![img alt](/images/nestjs_logs.png)
+
+####
 
 ## Authentications
 
