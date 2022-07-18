@@ -35,7 +35,7 @@ HRHIS uses docker from development to deployment.
 
 1. Install [Docker](https://www.docker.com/)
 2. Clone the [repo](https://github.com/udsm-dhis2-lab/hris-core)
-3. cd into your clone repository
+3. cd into your cloned repository
 4. Create `Dockerfile` file
 
    ```javascript
@@ -123,7 +123,9 @@ HRHIS uses docker from development to deployment.
 
 ![img alt](/images/nestjs_logs.png)
 
-####
+Your HRHIS development environment is ready!!! Happy Coding!
+
+<br />
 
 ## Authentications
 
