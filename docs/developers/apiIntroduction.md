@@ -34,7 +34,7 @@ HRHIS uses docker from development to deployment.
 `Steps`
 
 1. Install [Docker](https://www.docker.com/)
-2. Clone the [repo](git@github.com:udsm-dhis2-lab/hris-core.git)
+2. Clone the [repo](https://github.com/udsm-dhis2-lab/hris-core)
 3. cd into your clone repository
 4. Create `Dockerfile` file
 
